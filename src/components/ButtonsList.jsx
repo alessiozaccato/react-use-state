@@ -4,11 +4,6 @@ const ButtonsList = (props) => {
     const { languages, handleLangs, idDesc } = props
 
 
-    // user experience to check the content of the array
-    if (languages.length === 0) {
-        return <h2>Non ci sono Linguaggi</h2>
-    }
-
     return (
 
 

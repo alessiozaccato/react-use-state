@@ -9,7 +9,7 @@ const Description = (props) => {
 
             return (
                 < div key={id} >
-                    {idDesc === index && < h4 className='btnDescription' > {description} </h4>}
+                    {idDesc === index && <div className='btnDescription' >< h4 > {description} </h4></div>}
                 </div >
             )
 

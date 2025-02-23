@@ -13,7 +13,10 @@ const Main = (props) => {
             <div className="buttonsContainer">
                 <ButtonsList handleLangs={handleLangs} languages={props.languages} idDesc={idDesc} />
             </div>
-            <Description idDesc={idDesc} languages={props.languages} />
+            {idDesc === null ?
+                <div className='btnDescription' >< h4 > Non hai selezionato nessun linguaggio </h4></div>
+                : <Description idDesc={idDesc} languages={props.languages} />}
+
         </>
     )
 }
