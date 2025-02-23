@@ -1,12 +1,8 @@
-import { useState } from 'react';
 
 const ButtonsList = (props) => {
 
-    const { languages } = props
+    const { languages, handleLangs, idDesc } = props
 
-    // const [idDesc, setIdDesc] = useState(false);
-
-    // const handleLangs = () => setIdDesc(!idDesc);
 
     // user experience to check the content of the array
     if (languages.length === 0) {
@@ -16,21 +12,14 @@ const ButtonsList = (props) => {
     return (
 
 
-        languages.map((language) => {
+        languages.map((language, index) => {
 
-            const { id, title, description } = language;
-
-            const [idDesc, setIdDesc] = useState(false);
-
-            const handleLangs = () => setIdDesc(!idDesc);
+            const { id, title } = language;
 
             return (
 
-                <div className="lang" key={id} >
-                    <button className='button' onClick={handleLangs}> {title}</button>
-                    <div className='btnDescription'>
-                        {idDesc && < div > {description} </div>}
-                    </div >
+                <div key={id} >
+                    <button className={`button ${idDesc == index && "active"}`} onClick={() => handleLangs(index)}> {title}</button>
                 </div >
 
             )
